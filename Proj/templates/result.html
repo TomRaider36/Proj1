@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Filtered Image</title>
+    <style>
+        body {
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+        header {
+            background-color: #222;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        header a:hover {
+            color: #4CAF50;
+        }
+        .images {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        img {
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1>Filtered Image</h1>
+    <div style="display:flex;">
+        <div style="flex:1">
+            <h3>Original Image</h3>
+            <img src="data:image/jpeg;base64,{{ original }}" alt="Original Image">
+        </div>
+        <div style="flex:1">
+            <h3>Filtered Image</h3>
+            <img src="data:image/jpeg;base64,{{ filtered }}" alt="Filtered Image">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Filter</title>
+    <style>
+        body {
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            color: #fff;
+            
+        }
+        header {
+            background-color: #222;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        header a:hover {
+            color: #4CAF50;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #444;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        select, input[type="file"], input[type="submit"], input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            background-color: #555;
+            color: #fff;
+        }
+        input[type="file"] {
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+            cursor: pointer;
+        }
+        input[type="reset"]:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Team Info</a>
+    
+    </header>
+    <h1><b>Image Filter</b></h1>
+    <form action="/filter" method="POST" enctype="multipart/form-data">
+        <label for="filter">Select a filter:</label>
+        <select id="filter" name="filter">
+            <option value="grayscale">Grayscale</option>
+            <option value="sobel">Sobel</option>
+            <option value="box">Box</option>
+            <option value="laplacian">Laplacian</option>
+            <option value="median">Median</option>
+            <option value="gaussian">Gaussian</option>
+            <option value="bilateral">Bilateral</option>
+        </select>
+        <label for="image">Upload an image:</label>
+        <input type="file" id="image" name="image">
+        <input type="submit" value="Apply Filter">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
